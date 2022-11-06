@@ -15,7 +15,7 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    history.push('app-recipes/meals');
+    history.push('/app-recipes/meals');
     localStorage.setItem('user', JSON.stringify({ email }));
   };
 

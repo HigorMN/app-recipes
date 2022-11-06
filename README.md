@@ -1,6 +1,6 @@
 # Projeto - App de receitas
 
-<a href="https://higormn.github.io/app-recipes/" target="_blank" >Visite o App de receitas</a><br />
+<a href="https://higormn.github.io/app-recipes/" target="_blank">Visite o App de receitas</a><br />
 
 <details>
   <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />

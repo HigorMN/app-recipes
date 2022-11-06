@@ -2,12 +2,14 @@
   "name": "recipes-app-test",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://HigorMN.github.io/app-recipes",
   "engines": {
     "node": "16"
   },
   "dependencies": {
     "bootstrap": "^5.2.0",
     "clipboard-copy": "^4.0.1",
+    "gh-pages": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
@@ -24,6 +26,8 @@
     "test-coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint:styles": "npx stylelint '**/*.css'"
   },
   "eslintConfig": {

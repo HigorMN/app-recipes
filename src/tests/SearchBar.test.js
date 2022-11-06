@@ -13,16 +13,19 @@ const testIdSearchButton = 'exec-search-btn';
 const testIdRecipeCard = '1-recipe-card';
 const alert = 'Sorry, we haven\'t found any recipes for these filters.';
 
+const path = 'app-recipes/meals';
+const path2 = 'app-recipes/drinks';
+
 describe('test component SearchBar', () => {
   jest.setTimeout(60000);
   test('check if returns endpoints by name on meals ', async () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/meals');
+      history.push(path);
     });
 
-    expect(history.location.pathname).toBe('/meals');
+    expect(history.location.pathname).toBe(path);
 
     const buttonSearch = screen.getByTestId(testIdSearchTop);
     userEvent.click(buttonSearch);
@@ -53,7 +56,7 @@ describe('test component SearchBar', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/meals');
+      history.push(path);
     });
 
     const buttonSearch = screen.getByTestId(testIdSearchTop);
@@ -85,7 +88,7 @@ describe('test component SearchBar', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/meals');
+      history.push(path);
     });
 
     const buttonSearch = screen.getByTestId(testIdSearchTop);
@@ -121,7 +124,7 @@ describe('test component SearchBar', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/meals');
+      history.push(path);
     });
 
     const buttonSearch = screen.getByTestId(testIdSearchTop);
@@ -148,7 +151,7 @@ describe('test component SearchBar', () => {
     jest.spyOn(global, 'alert').mockReturnValue(alert);
 
     act(() => {
-      history.push('/meals');
+      history.push(path);
     });
     console.log(history);
     const buttonSearch = screen.getByTestId(testIdSearchTop);
@@ -175,10 +178,10 @@ describe('test component SearchBar', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/drinks');
+      history.push(path2);
     });
 
-    expect(history.location.pathname).toBe('/drinks');
+    expect(history.location.pathname).toBe(path2);
 
     const buttonSearch = screen.getByTestId(testIdSearchTop);
     userEvent.click(buttonSearch);
@@ -209,10 +212,10 @@ describe('test component SearchBar', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/drinks');
+      history.push(path2);
     });
 
-    expect(history.location.pathname).toBe('/drinks');
+    expect(history.location.pathname).toBe(path2);
 
     const buttonSearch = screen.getByTestId(testIdSearchTop);
     userEvent.click(buttonSearch);
@@ -242,10 +245,10 @@ describe('test component SearchBar', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/drinks');
+      history.push(path2);
     });
 
-    expect(history.location.pathname).toBe('/drinks');
+    expect(history.location.pathname).toBe(path2);
 
     const buttonSearch = screen.getByTestId(testIdSearchTop);
     userEvent.click(buttonSearch);
@@ -278,7 +281,7 @@ describe('test component SearchBar', () => {
     jest.spyOn(global, 'alert').mockReturnValue(alert);
 
     act(() => {
-      history.push('/meals');
+      history.push(path);
     });
     console.log(history);
     const buttonSearch = screen.getByTestId(testIdSearchTop);

@@ -4,14 +4,16 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from './utils/renderWithRouter';
 
+const path = 'app-recipes/meals';
+
 describe('Testando a tela de receitas', () => {
   jest.setTimeout(40000);
   test('1-meals', async () => {
     const { history } = renderWithRouter(<App />);
     act(() => {
-      history.push('/meals');
+      history.push(path);
     });
-    expect(history.location.pathname).toBe('/meals');
+    expect(history.location.pathname).toBe(path);
 
     const img = await screen.findByTestId('0-card-img', undefined, { timeout: 5000 });
     const button = await screen.findByTestId('Beef-category-filter', { }, { timeout: 5000 });
@@ -36,9 +38,9 @@ describe('Testando a tela de receitas', () => {
   it('2-drinks', async () => {
     const { history } = renderWithRouter(<App />);
     act(() => {
-      history.push('/drinks');
+      history.push(path);
     });
-    expect(history.location.pathname).toBe('/drinks');
+    expect(history.location.pathname).toBe('app-recipes/drinks');
 
     const img = await screen.findByTestId('0-card-img', undefined, { timeout: 5000 });
     const button = await screen.findByTestId(/ordinary drink-category-filter/i, { }, { timeout: 5000 });
@@ -72,7 +74,7 @@ describe('Testando a tela de receitas', () => {
   test('test', async () => {
     const { history } = renderWithRouter(<App />);
     act(() => {
-      history.push('/drinks');
+      history.push('app-recipes/drinks');
     });
     const button = await screen.findByTestId(/ordinary drink-category-filter/i, { }, { timeout: 5000 });
     userEvent.click(button);
@@ -86,7 +88,7 @@ describe('Testando a tela de receitas', () => {
   test('test-2', async () => {
     const { history } = renderWithRouter(<App />);
     act(() => {
-      history.push('/meals');
+      history.push('app-recipes/meals');
     });
     const button = await screen.findByTestId('Beef-category-filter', { }, { timeout: 5000 });
     userEvent.click(button);

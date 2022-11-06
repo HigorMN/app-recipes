@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="footer" data-testid="footer">
       <button
-        onClick={ () => history.push('/drinks') }
+        onClick={ () => history.push('app-recipes/drinks') }
         type="button"
         className="left"
       >
@@ -18,7 +18,7 @@ export default function Footer() {
       </button>
 
       <button
-        onClick={ () => history.push('/meals') }
+        onClick={ () => history.push('app-recipes/meals') }
         type="button"
         className="right"
       >

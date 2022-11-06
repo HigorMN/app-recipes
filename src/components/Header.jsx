@@ -80,7 +80,7 @@ export default function Header() {
           <button
             className="Header__button"
             type="button"
-            onClick={ () => history.push('/profile') }
+            onClick={ () => history.push('app-recipes/profile') }
           >
             <img
               data-testid="profile-top-btn"

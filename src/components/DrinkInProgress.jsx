@@ -81,7 +81,7 @@ export default function DrinkInProgress() {
     };
 
     localStorage.setItem('doneRecipes', JSON.stringify([...getLocalDone, recipe]));
-    history.push('/done-recipes');
+    history.push('app-recipes/done-recipes');
   };
 
   return (

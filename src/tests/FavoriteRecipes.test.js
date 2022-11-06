@@ -16,14 +16,14 @@ const share2 = '1-horizontal-share-btn';
 const role = 'src';
 const func = (ele) => expect(ele).toHaveAttribute(role, 'whiteHeartIcon.svg');
 const func2 = (ele) => expect(ele).toHaveAttribute(role, 'blackHeartIcon.svg');
-const path1 = '/favorite-recipes';
+const path1 = 'app-recipes/favorite-recipes';
 
 describe('testando a paginda de receitas favoritas', () => {
   jest.setTimeout(40000);
   it('testando se os elemento são renderizados', async () => {
     const { history } = renderWithRouter(<App />);
     act(() => {
-      history.push('/meals/52771');
+      history.push('app-recipes/meals/52771');
     });
     const btnFavRecipe = await screen.findByTestId(favBtnId, {}, { timeout: 30000 });
     expect(btnFavRecipe).toBeInTheDocument();
@@ -60,7 +60,7 @@ describe('testando a paginda de receitas favoritas', () => {
   it('testando se os elemento são renderizados', async () => {
     const { history } = renderWithRouter(<App />);
     act(() => {
-      history.push('/drinks/15997');
+      history.push('app-recipes/drinks/15997');
     });
     const btnFavRecipe = await screen.findByTestId(favBtnId, {}, { timeout: 30000 });
     expect(btnFavRecipe).toBeInTheDocument();

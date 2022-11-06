@@ -24,7 +24,7 @@ describe('test component Header', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/profile');
+      history.push('app-recipes/profile');
     });
 
     const titleProfile = screen.getByRole('heading', { name: /profile/i });
@@ -35,10 +35,10 @@ describe('test component Header', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/meals');
+      history.push('app-recipes/meals');
     });
 
-    expect(history.location.pathname).toBe('/meals');
+    expect(history.location.pathname).toBe('app-recipes/meals');
     const titleMeals = screen.getByTestId('page-title', { name: /meals/i });
     expect(titleMeals).toBeInTheDocument();
   });
@@ -46,9 +46,9 @@ describe('test component Header', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/drinks');
+      history.push('app-recipes/drinks');
     });
-    expect(history.location.pathname).toBe('/drinks');
+    expect(history.location.pathname).toBe('app-recipes/drinks');
     const titleDrinks = screen.getByRole('heading', { name: /drinks/i });
     const buttonSearch = screen.getByTestId('search-top-btn');
     userEvent.click(buttonSearch);
@@ -58,7 +58,7 @@ describe('test component Header', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/done-recipes');
+      history.push('app-recipes/done-recipes');
     });
 
     const titleDoneRecipes = screen.getByRole('heading', {
@@ -70,7 +70,7 @@ describe('test component Header', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('/favorite-recipes');
+      history.push('app-recipes/favorite-recipes');
     });
 
     const titleFavoriteRecipes = screen.getByRole('heading', {

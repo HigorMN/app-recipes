@@ -1,12 +1,17 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { act } from 'react-dom/test-utils';
 import App from '../App';
 import renderWithRouter from './utils/renderWithRouter';
 
 describe('Testando a tela de login', () => {
   test('Se os inputs estão na tela', () => {
-    renderWithRouter(<App />);
+    const { history } = renderWithRouter(<App />);
+
+    act(() => {
+      history.push('/app-recipes');
+    });
     const inputEmail = screen.getByTestId('email-input');
     const inputPassword = screen.getByTestId('password-input');
     const loginSubmitBtn = screen.getByTestId('login-submit-btn');
@@ -18,6 +23,10 @@ describe('Testando a tela de login', () => {
 
   test('Se o botão é desabilitado e habilitado quando digitado um email e senha valido', () => {
     const { history } = renderWithRouter(<App />);
+
+    act(() => {
+      history.push('/app-recipes');
+    });
     const inputEmail = screen.getByTestId('email-input');
     const inputPassword = screen.getByTestId('password-input');
     const loginSubmitBtn = screen.getByTestId('login-submit-btn');
@@ -37,7 +46,7 @@ describe('Testando a tela de login', () => {
     userEvent.click(loginSubmitBtn);
     const emailLocal = JSON.parse(localStorage.getItem('user'));
 
-    expect(history.location.pathname).toBe('/meals');
+    expect(history.location.pathname).toBe('/app-recipes/meals');
     expect(emailLocal.email).toBe('test@test.com');
   });
 });

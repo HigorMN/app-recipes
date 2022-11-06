@@ -18,7 +18,7 @@ export default function DrinkInProgress() {
   const [finishDisible, setFinishDisible] = useState(true);
 
   const history = useHistory();
-  const id = history.location.pathname.split('/')[2];
+  const id = history.location.pathname.split('/')[3];
 
   const getLocal = localStorageInProgressRecipes();
 
@@ -81,7 +81,7 @@ export default function DrinkInProgress() {
     };
 
     localStorage.setItem('doneRecipes', JSON.stringify([...getLocalDone, recipe]));
-    history.push('app-recipes/done-recipes');
+    history.push('/app-recipes/done-recipes');
   };
 
   return (

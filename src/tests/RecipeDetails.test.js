@@ -6,7 +6,7 @@ import App from '../App';
 import renderWithRouter from './utils/renderWithRouter';
 import { mockFavoriteLocal, mockLocalInProgress, removeLocalStorage, setLocalStorage } from './utils/mockLocalStorage';
 
-const pathName = 'app-recipes/meals/52772';
+const pathName = '/app-recipes/meals/52772';
 const favBtnId = 'favorite-btn';
 
 describe('Testando o RecipeDetails', () => {
@@ -15,7 +15,7 @@ describe('Testando o RecipeDetails', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('app-recipes/meals/52771');
+      history.push('/app-recipes/meals/52771');
     });
 
     const ingrediente = await screen.findByTestId('1-ingredient-name-and-measure', {}, { timeout: 30000 });
@@ -30,7 +30,7 @@ describe('Testando o RecipeDetails', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('app-recipes/drinks/178319');
+      history.push('/app-recipes/drinks/178319');
     });
 
     const ingrediente = await screen.findByTestId('1-ingredient-name-and-measure', {}, { timeout: 30000 });
@@ -67,11 +67,11 @@ describe('Testando o RecipeDetails', () => {
       history.push(pathName);
     });
 
-    const btnContinue = screen.getByText('Continue Recipe');
+    const btnContinue = screen.getByText(/start recipe/i);
     expect(btnContinue).toBeInTheDocument();
     userEvent.click(btnContinue);
 
-    expect(history.location.pathname).toBe('app-recipes/meals/52772/in-progress');
+    expect(history.location.pathname).toBe('/app-recipes/meals/52772/in-progress');
 
     removeLocalStorage('inProgressRecipes');
   });
@@ -101,7 +101,7 @@ describe('Testando o RecipeDetails', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('app-recipes/drinks/178319');
+      history.push('/app-recipes/drinks/178319');
     });
 
     const btnfavorite = screen.getByTestId(favBtnId);

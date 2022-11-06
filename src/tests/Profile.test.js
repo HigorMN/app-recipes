@@ -5,7 +5,7 @@ import { act } from 'react-dom/test-utils';
 import App from '../App';
 import renderWithRouter from './utils/renderWithRouter';
 
-const path = 'app-recipes/profile';
+const path = '/app-recipes/profile';
 
 describe('Testa a tela Profile', () => {
   test('se os elementos estão na tela e se comportam como esperado', () => {
@@ -22,7 +22,7 @@ describe('Testa a tela Profile', () => {
     expect(btnDone).toBeInTheDocument();
 
     userEvent.click(btnDone);
-    expect(history.location.pathname).toBe('app-recipes/done-recipes');
+    expect(history.location.pathname).toBe('/app-recipes/done-recipes');
   });
 
   test('se ao clicar no btn favRecipes há o comportamento esperado', () => {
@@ -36,7 +36,7 @@ describe('Testa a tela Profile', () => {
     expect(btnFav).toBeInTheDocument();
 
     userEvent.click(btnFav);
-    expect(history.location.pathname).toBe('app-recipes/favorite-recipes');
+    expect(history.location.pathname).toBe('/app-recipes/favorite-recipes');
   });
 
   test('se ao clicar no btn logout há o comportamento esperado', () => {
@@ -50,6 +50,6 @@ describe('Testa a tela Profile', () => {
     expect(btnLogout).toBeInTheDocument();
 
     userEvent.click(btnLogout);
-    expect(history.location.pathname).toBe('app-recipes/');
+    expect(history.location.pathname).toBe('/app-recipes/');
   });
 });

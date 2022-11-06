@@ -16,33 +16,33 @@ export default function App() {
   return (
     <Provider>
       <Switch>
-        <Route exact path="app-recipes/" component={ Login } />
-        <Route path="app-recipes/done-recipes" component={ DoneRecipes } />
-        <Route path="app-recipes/favorite-recipes" component={ FavoriteRecipes } />
-        <Route exact path="app-recipes/drinks">
+        <Route exact path="/app-recipes/" component={ Login } />
+        <Route path="/app-recipes/done-recipes" component={ DoneRecipes } />
+        <Route path="/app-recipes/favorite-recipes" component={ FavoriteRecipes } />
+        <Route exact path="/app-recipes/drinks">
           <Header />
           <Recipes />
           <Footer />
         </Route>
-        <Route exact path="app-recipes/meals">
+        <Route exact path="/app-recipes/meals">
           <Header />
           <Recipes />
           <Footer />
         </Route>
-        <Route exact path="app-recipes/profile">
+        <Route exact path="/app-recipes/profile">
           <Profile />
           <Footer />
         </Route>
-        <Route exact path="app-recipes/meals/:id" component={ RecipeDetails } />
-        <Route exact path="app-recipes/drinks/:id" component={ RecipeDetails } />
+        <Route exact path="/app-recipes/meals/:id" component={ RecipeDetails } />
+        <Route exact path="/app-recipes/drinks/:id" component={ RecipeDetails } />
         <Route
           exact
-          path="app-recipes/meals/:id/in-progress"
+          path="/app-recipes/meals/:id/in-progress"
           component={ RecipeInProgress }
         />
         <Route
           exact
-          path="app-recipes/drinks/:id/in-progress"
+          path="/app-recipes/drinks/:id/in-progress"
           component={ RecipeInProgress }
         />
       </Switch>

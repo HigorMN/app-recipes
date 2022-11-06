@@ -15,7 +15,7 @@ describe('Testando o RecipeInProgress', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('app-recipes/meals/52771/in-progress');
+      history.push('/app-recipes/meals/52771/in-progress');
     });
 
     const findCheck01 = await screen.findByTestId(checkId01, {}, { timeout: 10000 });
@@ -48,7 +48,7 @@ describe('Testando o RecipeInProgress', () => {
     const { history } = renderWithRouter(<App />);
 
     act(() => {
-      history.push('app-recipes/drinks/178319/in-progress');
+      history.push('/app-recipes/drinks/178319/in-progress');
     });
 
     const findCheck01 = await screen.findByTestId(checkId01, {}, { timeout: 10000 });

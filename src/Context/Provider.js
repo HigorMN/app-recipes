@@ -46,7 +46,7 @@ export default function Provider({ children }) {
     if (response.meals === null) {
       global.alert(alert);
     } else if (response.meals.length === 1) {
-      history.push(`app-recipes/meals/${response.meals[0].idMeal}`);
+      history.push(`/app-recipes/meals/${response.meals[0].idMeal}`);
     } else {
       setIngredientsApi(response);
       setRecipesData(response.meals.slice(0, MaxRecipes));
@@ -60,7 +60,7 @@ export default function Provider({ children }) {
     if (response.meals === null) {
       global.alert(alert);
     } else if (response.meals.length === 1) {
-      history.push(`app-recipes/meals/${response.meals[0].idMeal}`);
+      history.push(`/app-recipes/meals/${response.meals[0].idMeal}`);
     } else {
       setIngredientsApiName(response);
       setRecipesData(response.meals.slice(0, MaxRecipes));
@@ -73,7 +73,7 @@ export default function Provider({ children }) {
     if (response.meals === null) {
       global.alert(alert);
     } else if (response.meals.length === 1) {
-      history.push(`app-recipes/meals/${response.meals[0].idMeal}`);
+      history.push(`/app-recipes/meals/${response.meals[0].idMeal}`);
     } else {
       setIngredientsApiFl(response);
       setRecipesData(response.meals.slice(0, MaxRecipes));
@@ -86,7 +86,7 @@ export default function Provider({ children }) {
     if (response.drinks === null) {
       global.alert(alert);
     } else if (response.drinks.length === 1) {
-      history.push(`app-recipes/drinks/${response.drinks[0].idDrink}`);
+      history.push(`/app-recipes/drinks/${response.drinks[0].idDrink}`);
     } else {
       setIngredientsApi(response);
       setRecipesData(response.drinks.slice(0, MaxRecipes));
@@ -99,7 +99,7 @@ export default function Provider({ children }) {
     if (response.drinks === null) {
       global.alert(alert);
     } else if (response.drinks.length === 1) {
-      history.push(`app-recipes/drinks/${response.drinks[0].idDrink}`);
+      history.push(`/app-recipes/drinks/${response.drinks[0].idDrink}`);
     } else {
       setIngredientsApiName(response);
       setRecipesData(response.drinks.slice(0, MaxRecipes));
@@ -112,7 +112,7 @@ export default function Provider({ children }) {
     if (response.drinks === null) {
       global.alert(alert);
     } else if (response.drinks.length === 1) {
-      history.push(`app-recipes/drinks/${response.drinks[0].idDrink}`);
+      history.push(`/app-recipes/drinks/${response.drinks[0].idDrink}`);
     } else {
       setIngredientsApiFl(response);
       setRecipesData(response.drinks.slice(0, MaxRecipes));
@@ -120,7 +120,7 @@ export default function Provider({ children }) {
   }, [history, inputFIlter]);
 
   const setDrinksFilterAPi = useCallback(() => {
-    const text = 'app-recipes/drinks';
+    const text = '/app-recipes/drinks';
     const route = history.location.pathname;
     if (route === text && radioIngredient === true) {
       fetchDrinkIngr();
@@ -146,7 +146,7 @@ export default function Provider({ children }) {
   ]);
 
   const setMealsFilterAPi = useCallback(() => {
-    const text = 'app-recipes/meals';
+    const text = '/app-recipes/meals';
     const route = history.location.pathname;
     if (route === text && radioIngredient === true) {
       fetchIngredients();

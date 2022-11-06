@@ -9,7 +9,7 @@ export default function CardMeals() {
       {recipesData.map((recipe, index) => (
         <Link
           key={ recipe.idMeal }
-          to={ `/meals/${recipe.idMeal}` }
+          to={ `/app-recipes/meals/${recipe.idMeal}` }
           className="Recipe__card__name"
         >
           <div data-testid={ `${index}-recipe-card` } className="Recipe__card">

@@ -24,16 +24,16 @@ export default function Profile() {
   const history = useHistory();
 
   const handleBtnDoneRecipes = () => {
-    history.push('app-recipes/done-recipes');
+    history.push('/app-recipes/done-recipes');
   };
 
   const handleBtnFavoriteRecipes = () => {
-    history.push('app-recipes/favorite-recipes');
+    history.push('/app-recipes/favorite-recipes');
   };
 
   const handleBtnLogout = () => {
     localStorage.clear('user');
-    history.push('app-recipes/');
+    history.push('/app-recipes/');
   };
   return (
     <>

@@ -17,7 +17,7 @@ export default function MealInProgress() {
   const [finishDisible, setFinishDisible] = useState(true);
 
   const history = useHistory();
-  const id = history.location.pathname.split('/')[2];
+  const id = history.location.pathname.split('/')[3];
 
   const getLocal = localStorageInProgressRecipes();
 

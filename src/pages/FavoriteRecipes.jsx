@@ -21,7 +21,9 @@ export default function FavoriteRecipes() {
     setFavs2(us);
   }, []);
   const handleClip = (id, type) => {
-    clip(`http://localhost:3000/${type}s/${id}`);
+    const index1 = window.location.href.indexOf('favorite-recipes');
+    const location = window.location.href.substring(0, index1 - 1);
+    clip(`${location}/${type}s/${id}`);
     setText(true);
   };
   const handleFavs = (elem) => {
@@ -85,7 +87,7 @@ export default function FavoriteRecipes() {
           element.type.includes('meal')
             ? (
               <div key={ i } className="Receipe__Card__container">
-                <Link to={ `/meals/${element.id}` }>
+                <Link to={ `/app-recipes/meals/${element.id}` }>
                   <img
                     src={ element.image }
                     alt={ element.name }
@@ -94,7 +96,10 @@ export default function FavoriteRecipes() {
                   />
                 </Link>
                 <div className="Card__container1">
-                  <Link to={ `/meals/${element.id}` } className="Recipe__card__name">
+                  <Link
+                    to={ `/app-recipes/meals/${element.id}` }
+                    className="Recipe__card__name"
+                  >
                     <h2 data-testid={ `${i}-horizontal-name` }>{element.name}</h2>
                     <p
                       data-testid={ `${i}-horizontal-top-text` }
@@ -131,7 +136,7 @@ export default function FavoriteRecipes() {
               <div key={ i } className="Receipe__Card__container">
                 <Link
                   key={ i }
-                  to={ `/drinks/${element.id}` }
+                  to={ `/app-recipes/drinks/${element.id}` }
                 >
                   <img
                     src={ element.image }
@@ -143,7 +148,7 @@ export default function FavoriteRecipes() {
                 <div className="Card__container1">
                   <Link
                     key={ i }
-                    to={ `/drinks/${element.id}` }
+                    to={ `/app-recipes/drinks/${element.id}` }
                     className="Recipe__card__name"
                   >
                     <h2 data-testid={ `${i}-horizontal-name` }>{element.name}</h2>

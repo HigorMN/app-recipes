@@ -13,8 +13,8 @@ const testIdSearchButton = 'exec-search-btn';
 const testIdRecipeCard = '1-recipe-card';
 const alert = 'Sorry, we haven\'t found any recipes for these filters.';
 
-const path = 'app-recipes/meals';
-const path2 = 'app-recipes/drinks';
+const path = '/app-recipes/meals';
+const path2 = '/app-recipes/drinks';
 
 describe('test component SearchBar', () => {
   jest.setTimeout(60000);
@@ -153,7 +153,6 @@ describe('test component SearchBar', () => {
     act(() => {
       history.push(path);
     });
-    console.log(history);
     const buttonSearch = screen.getByTestId(testIdSearchTop);
     userEvent.click(buttonSearch);
 
@@ -283,7 +282,7 @@ describe('test component SearchBar', () => {
     act(() => {
       history.push(path);
     });
-    console.log(history);
+
     const buttonSearch = screen.getByTestId(testIdSearchTop);
     userEvent.click(buttonSearch);
 

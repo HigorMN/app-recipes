@@ -13,7 +13,9 @@ export default function DoneRecipesCard(props) {
   const [copyLink, setCopyLink] = useState(false);
 
   const copyUrl = (param) => {
-    clip(`http://localhost:3000/${param.type}s/${param.id}`);
+    const index1 = window.location.href.indexOf('done-recipes');
+    const location = window.location.href.substring(0, index1 - 1);
+    clip(`${location}/${param.type}s/${param.id}`);
     setCopyLink(true);
   };
   return (
@@ -21,7 +23,7 @@ export default function DoneRecipesCard(props) {
       {doneRecipe.type === 'meal' ? (
         <div key={ doneRecipe.id } className="Receipe__Card__container">
           { copyLink && (<p>Link copied!</p>)}
-          <Link key={ index } to={ `/meals/${doneRecipe.id}` }>
+          <Link key={ index } to={ `/app-recipes/meals/${doneRecipe.id}` }>
             <img
               data-testid={ `${index}-horizontal-image` }
               src={ doneRecipe.image }
@@ -33,7 +35,7 @@ export default function DoneRecipesCard(props) {
             <div className="Card__name__share">
               <Link
                 key={ index }
-                to={ `/meals/${doneRecipe.id}` }
+                to={ `/app-recipes/meals/${doneRecipe.id}` }
                 className="Recipe__card__name"
               >
                 <h2 data-testid={ `${index}-horizontal-name` }>{doneRecipe.name}</h2>
@@ -66,7 +68,7 @@ export default function DoneRecipesCard(props) {
       ) : (
         <div key={ doneRecipe.id } className="Receipe__Card__container">
           { copyLink && (<p>Link copied!</p>)}
-          <Link key={ index } to={ `/drinks/${doneRecipe.id}` }>
+          <Link key={ index } to={ `/app-recipes/drinks/${doneRecipe.id}` }>
             <img
               data-testid={ `${index}-horizontal-image` }
               src={ doneRecipe.image }
@@ -78,7 +80,7 @@ export default function DoneRecipesCard(props) {
             <div className="Card__name__share">
               <Link
                 key={ index }
-                to={ `/drinks/${doneRecipe.id}` }
+                to={ `/app-recipes/drinks/${doneRecipe.id}` }
                 className="Recipe__card__name"
               >
                 <h2 data-testid={ `${index}-horizontal-name` }>{doneRecipe.name}</h2>

@@ -5,7 +5,7 @@ import { act } from 'react-dom/test-utils';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
-const path = 'app-recipes/meals';
+const path = '/app-recipes/meals';
 
 describe('Testa o componente Footer', () => {
   test('testa se aparece os botões na tela', () => {
@@ -33,7 +33,7 @@ describe('Testa o componente Footer', () => {
     const meal = screen.getByTestId('meals-bottom-btn');
 
     userEvent.click(drink);
-    expect(history.location.pathname).toBe(path);
+    expect(history.location.pathname).toBe('/app-recipes/drinks');
     userEvent.click(meal);
     expect(history.location.pathname).toBe(path);
   });

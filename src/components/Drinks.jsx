@@ -85,7 +85,7 @@ export default function Drinks() {
           {drinks.map((element, i) => (
             <Link
               key={ i }
-              to={ `/drinks/${element.idDrink}` }
+              to={ `/app-recipes/drinks/${element.idDrink}` }
               className="Recipe__card__name"
             >
               <div

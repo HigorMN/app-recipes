@@ -1,7 +1,5 @@
 # Projeto - App de receitas
 
-Link: https://higormn.github.io/app-recipes/
-
 <details>
   <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
@@ -26,6 +24,20 @@ O layout tem como foco dispositivos móveis, dessa forma todos os protótipos v�
 - Utilizar o _React Hook useEffect_
 - Criar Hooks customizados
 </details><br />
+
+- Objetivo do Projeto: 
+  - Desenvolver uma aplicação de receitas, onde fosse possível consultar, favoritar ou desfavoritar uma receita, fazer o checklist do preparo das receitas e compartilhar o link de uma receita. O público alvo desse App seriam pessoas de qualquer idade com interesse em  aprender receitas novas e que tivesse um lugar para organizar essas receitas de forma prática;
+
+ - Como o grupo se organizou:
+    - reunião no primeiro dia com definições importantes na condução do desenvolvimento:
+      - Definimos  como meta atingir os 100% dos requisitos e dividimos os requisitos por dia para estipularmos quando iriamos terminar a tempo de montar a apresentação;
+      - Definimos o desenvolvimento com o context e componentes funcionais;
+      - Divisão dos requisitos por tela para cada pessoa do grupo;
+      - Definimos a utilização do trello para ter visibilidade do andamento dos requisitos;
+      - Definimos que a pessoa que desenvolvesse uma tela também faria os testes dessa tela;
+      - Definimos que se houvesse dificuldade traríamos para alguém do grupo  e, persistindo essa dificuldade, procuraríamos ajuda na monitoria ou de outros colegas;
+  - Desafios/Aprendizados:
+    - Pra mim o maior aprendizado é de como a comunicação influencia diretamente na organização, colaboração e para lhe dar com situações adversas. Uma vez que todos sabem as expectativas e dificuldades de cada um fica muito mais fácil de administrar qualquer situação no dia a dia.
 
 # Telas
 
